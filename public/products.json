@@ -1,0 +1,63 @@
+[
+    {
+        "name": "Audi A3",
+        "img": "https://static.tcimg.net/vehicles/primary/84ec509fe2de6f43/2022-Audi-A3-white-full_color-driver_side_front_quarter.png",
+        "description": "The original A3 (or Type 8L) was introduced in the European market in 1996, marking Audi's return to the production of smaller cars following the demise of the Audi 50 in 1978. This was the first Volkswagen Group model to use the or  platform, bearing a close resemblance to the contemporary Volkswagen Golf Mk4, which arrived a year later.",
+        "price": 34945
+    },
+    {
+        "name": "Audi A4",
+        "img": "https://static.tcimg.net/vehicles/primary/7095775bdc15f3eb/2021-Audi-A4-white-full_color-driver_side_front_quarter.png",
+        "description": "The Audi A4 is a line of compact executive cars produced since 1994 by the German car manufacturer Audi, a subsidiary of the Volkswagen Group. The A4 has been built in five generations and is based on the Volkswagen Group B platform. The first generation A4 succeeded the Audi 80. The automaker's internal numbering treats the A4 as a continuation of the Audi 80 lineage",
+        "price": 40145
+    },
+    {
+        "name": "Audi Q5",
+        "img": "https://static.tcimg.net/vehicles/primary/1763abf775769199/2022-Audi-Q5-white-full_color-driver_side_front_quarter.png",
+        "description": "The Audi Q5 is a series of compact luxury crossover SUVs produced by the German luxury car manufacturer Audi from 2008.[1] The original first-generation (Typ 8R) model was the third member of the B8 family to be released after the Audi A5 and fourth-generation A4, all being based on the Audi MLB platform.",
+        "price": 46695
+    },
+    {
+        "name": "Ford Mustang",
+        "img": "https://static.tcimg.net/vehicles/primary/e6f718ae444cf841/2021-Ford-Mustang-white-full_color-driver_side_front_quarter.png",
+        "description": "The Ford Mustang is a series of American automobiles manufactured by Ford. In continuous production since 1964, the Mustang is currently the longest-produced Ford car nameplate. Currently in its sixth generation, it is the fifth-best selling Ford car nameplate. The namesake of the pony car automobile segment.",
+        "price": 28400
+    },
+    {
+        "name": "Nissan GT-R",
+        "img": "https://static.tcimg.net/vehicles/primary/50588e378c69cf2a/2021-Nissan-GT-R-white-full_color-driver_side_front_quarter.png",
+        "description": "The Nissan GT-R is a high-performance sports car and grand tourer produced by Nissan that was unveiled in 2007.[2][3][4] It is the successor to the Skyline GT-R, a high performance variant of the Nissan Skyline. Although this car was the sixth-generation model to bear the GT-R name, the model is no longer part of the Nissan Skyline model.",
+        "price": 115335
+    },
+    {
+        "name": "Nissan Murano",
+        "img": "https://static.tcimg.net/vehicles/primary/b4e574f91285687c/2021-Nissan-Murano-white-full_color-driver_side_front_quarter.png",
+        "description": "The Nissan Murano is a mid-size crossover SUV manufactured and marketed by Nissan since May 2002 as a model for 2003, and now in its third generation — with a convertible variant, the CrossCabriolet, available for the model years of 2011 to 2014.",
+        "price": 38065
+    },
+    {
+        "name": "Audi A3",
+        "img": "https://static.tcimg.net/vehicles/primary/84ec509fe2de6f43/2022-Audi-A3-white-full_color-driver_side_front_quarter.png",
+        "description": "The original A3 (or Type 8L) was introduced in the European market in 1996, marking Audi's return to the production of smaller cars following the demise of the Audi 50 in 1978. This was the first Volkswagen Group model to use the or  platform, bearing a close resemblance to the contemporary Volkswagen Golf Mk4, which arrived a year later.",
+        "price": 34945
+    },
+    {
+        "name": "BMW 4 Series",
+        "img": "https://static.tcimg.net/vehicles/primary/4dc5c0e3acb13d0a/2022-BMW-4_Series-white-full_color-driver_side_front_quarter.png",
+        "description": "The BMW 4 Series is a range of compact executive cars manufactured by BMW since 2013. The 4 Series was created when BMW spun off the 2-door models (coupé and convertible) of the 3 Series into a separate series. The 4 Series is currently in its second generation. The original 4 Series concept car was unveiled in January 2013 ",
+        "price": 46195
+    },
+    {
+        "name": "BMW X1",
+        "img": "https://static.tcimg.net/vehicles/primary/b423e4aa14375d95/2021-BMW-X1-white-full_color-driver_side_front_quarter.png",
+        "description": "The BMW X1 is a line of subcompact luxury SUV produced by BMW. Debuted in 2009, the first-generation X1 has been based on the E90 3 Series and offers rear-wheel drive layout as standard. At its introduction, it was positioned as the smallest SUV in BMW line-up below the X3, aiming a wider range of customers due to its smaller size, increased efficiency.",
+        "price": 36395
+    },
+    {
+        "name": "BMW Z4",
+        "img": "https://static.tcimg.net/vehicles/primary/af94892d38a3cf77/2022-BMW-Z4-white-full_color-driver_side_front_quarter.png",
+        "description": "The BMW Z models are a line of roadsters manufactured by German automaker BMW. The Z stands for zukunft (German for future),[1] and has been produced in four different series with six generations consisting of roadster, coupé, sports car, and concept variants. The introduction of the M Coupé and M Roadster in the Z3 line marked.",
+        "price": 50895
+    }
+    
+]
