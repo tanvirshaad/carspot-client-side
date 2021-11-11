@@ -1,6 +1,7 @@
 import { Button, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import banner from '../../images/banner.jpg';
 const Banner = () => {
     const bannerBg = {
@@ -35,7 +36,9 @@ const Banner = () => {
                             checkpoints so you get complete satisfaction and
                             peace.
                         </Typography>
-                        <Button variant="contained">Explore</Button>
+                        <Link to="/products" style={{ textDecoration: 'none' }}>
+                            <Button variant="contained">Explore</Button>
+                        </Link>
                     </Box>
                 </Grid>
             </Container>
