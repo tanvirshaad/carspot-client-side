@@ -9,9 +9,10 @@ import {
     Typography,
 } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { img, name, description, price } = product;
+    const { _id, img, name, description, price } = product;
     return (
         <Grid item xs={12} md={4}>
             <Card sx={{ maxWidth: 345 }}>
@@ -27,9 +28,18 @@ const Product = ({ product }) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button variant="contained" size="small" color="primary">
-                        BUY FOR ${price}
-                    </Button>
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to={`/placeOrder/${_id}`}
+                    >
+                        <Button
+                            variant="contained"
+                            size="small"
+                            color="primary"
+                        >
+                            BUY FOR ${price}
+                        </Button>
+                    </Link>
                 </CardActions>
             </Card>
         </Grid>

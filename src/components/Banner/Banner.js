@@ -36,7 +36,10 @@ const Banner = () => {
                             checkpoints so you get complete satisfaction and
                             peace.
                         </Typography>
-                        <Link to="/products" style={{ textDecoration: 'none' }}>
+                        <Link
+                            to="/AllProducts"
+                            style={{ textDecoration: 'none' }}
+                        >
                             <Button variant="contained">Explore</Button>
                         </Link>
                     </Box>

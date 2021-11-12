@@ -5,6 +5,8 @@ import AuthProvider from './components/contexts/AuthProvider/AuthProvider';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Products from './components/Products/Products';
+import AllProducts from './components/AllProducts/AllProducts';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 function App() {
     return (
@@ -17,8 +19,14 @@ function App() {
                     <Route path="/home">
                         <Home></Home>
                     </Route>
+                    <Route path="/allProducts">
+                        <AllProducts></AllProducts>
+                    </Route>
                     <Route path="/products">
                         <Products></Products>
+                    </Route>
+                    <Route path="/placeOrder/:_id">
+                        <PlaceOrder></PlaceOrder>
                     </Route>
                     <Route path="/login">
                         <Login></Login>
