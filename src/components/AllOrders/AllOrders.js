@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import {
     Button,
     Card,
@@ -11,21 +12,18 @@ import {
     Typography,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import React, { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 
-const MyOrders = () => {
+const AllOrders = () => {
     const { user, isLoading } = useAuth();
-    const [myOrders, setMyOrders] = useState([]);
+    const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
         const url = `http://localhost:5000/orders`;
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setMyOrders(data));
+            .then((data) => setAllOrders(data));
     }, [user?.email]);
-    const orders = myOrders.filter((order) => order.email === user?.email);
-
     const handleDelete = (id) => {
         const url = `http://localhost:5000/orders/${id}`;
         fetch(url, {
@@ -36,10 +34,10 @@ const MyOrders = () => {
                 let result = window.confirm('Are you sure to delete?');
                 if (result) {
                     alert('Order deleted');
-                    const remaining = myOrders.filter(
+                    const remaining = allOrders.filter(
                         (order) => order._id !== id
                     );
-                    setMyOrders(remaining);
+                    setAllOrders(remaining);
                 }
             });
     };
@@ -48,9 +46,9 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h3>Total Orders: {orders.length}</h3>
+            <h3>Total Orders: {allOrders.length}</h3>
             <Grid container spacing={2}>
-                {orders.map((order) => (
+                {allOrders.map((order) => (
                     <Grid item xs={12} md={4}>
                         <Card sx={{ maxWidth: 345 }}>
                             <CardActionArea>
@@ -65,7 +63,21 @@ const MyOrders = () => {
                                         variant="h5"
                                         component="div"
                                     >
+                                        Ordered By: {order.name}
+                                    </Typography>
+                                    <Typography
+                                        gutterBottom
+                                        variant="h6"
+                                        component="div"
+                                    >
                                         {order.order.name}
+                                    </Typography>
+                                    <Typography
+                                        gutterBottom
+                                        variant="h6"
+                                        component="div"
+                                    >
+                                        Address: {order.address}
                                     </Typography>
                                     <Typography
                                         variant="body2"
@@ -97,4 +109,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default AllOrders;

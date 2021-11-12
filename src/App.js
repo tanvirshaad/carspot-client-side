@@ -9,6 +9,7 @@ import AllProducts from './components/AllProducts/AllProducts';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Dashboard from './components/Dashboard/Dashboard';
+import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 
 function App() {
     return (

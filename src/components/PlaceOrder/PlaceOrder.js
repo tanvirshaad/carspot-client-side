@@ -18,7 +18,7 @@ const PlaceOrder = () => {
     const { _id } = useParams();
     const [product, setProducut] = useState({});
     const { user } = useAuth();
-
+    console.log(user);
     const {
         register,
         handleSubmit,
@@ -90,7 +90,7 @@ const PlaceOrder = () => {
                     >
                         <input
                             placeholder="Name"
-                            defaultValue={user?.name}
+                            defaultValue={user?.displayName}
                             {...register('name')}
                         />
 

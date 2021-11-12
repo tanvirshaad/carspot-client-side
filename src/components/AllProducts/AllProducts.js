@@ -1,9 +1,11 @@
-import { Container, Grid } from '@mui/material';
+import { CircularProgress, Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import useAuth from '../hooks/useAuth';
 import Product from '../Product/Product';
 
 const AllProducts = () => {
     let [products, setProducts] = useState([]);
+    const { user, isLoading } = useAuth();
     useEffect(() => {
         fetch('http://localhost:5000/products')
             .then((res) => res.json())
@@ -11,7 +13,9 @@ const AllProducts = () => {
                 setProducts(data);
             });
     }, []);
-
+    if (isLoading) {
+        return <CircularProgress />;
+    }
     return (
         <Container sx={{ py: 5 }}>
             <h1 style={{ textAlign: 'center' }}>Our Products</h1>

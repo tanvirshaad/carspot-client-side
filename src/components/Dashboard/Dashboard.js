@@ -6,12 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -19,13 +13,17 @@ import { Button } from '@mui/material';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import MyOrders from '../MyOrders/MyOrders';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AdminRoute from '../AdminRoute/AdminRoute';
+import Payments from '../Payments/Payments';
+import AllOrders from '../AllOrders/AllOrders';
 
-const drawerWidth = 200;
+const drawerWidth = 230;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin } = useAuth();
+    const { admin, logout } = useAuth();
     let { path, url } = useRouteMatch();
 
     const handleDrawerToggle = () => {
@@ -33,15 +31,26 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
+        <div style={{ marginLeft: 'auto' }}>
             <Toolbar />
             <Divider />
             <Link style={{ textDecoration: 'none' }} to="/allProducts">
                 <Button color="inherit">BUY MORE</Button>
             </Link>
-            <Link style={{ textDecoration: 'none' }} to={`${url}`}>
-                <Button color="inherit">Dashboard</Button>
+            <br />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}>
+                <Button color="inherit">My Orders</Button>
             </Link>
+            <Link style={{ textDecoration: 'none' }} to={`${url}/payment`}>
+                <Button color="inherit">Make Payment</Button>
+            </Link>
+            <br />
+            <Link style={{ textDecoration: 'none' }} to="/home">
+                <Button onClick={logout} variant="outlined">
+                    Logout
+                </Button>
+            </Link>
+            <br />
             {admin && (
                 <Box>
                     <Link
@@ -50,11 +59,13 @@ function Dashboard(props) {
                     >
                         <Button color="inherit">Make Admin</Button>
                     </Link>
+
+                    <br />
                     <Link
                         style={{ textDecoration: 'none' }}
-                        to={`${url}/addDoctor`}
+                        to={`${url}/allOrders`}
                     >
-                        <Button color="inherit">Add Doctor</Button>
+                        <Button color="inherit">All Orders</Button>
                     </Link>
                 </Box>
             )}
@@ -140,10 +151,19 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <MyOrders></MyOrders>
                     </Route>
-                    {/* <AdminRoute path={`${path}/makeAdmin`}>
+                    <Route path={`${path}/myOrders`}>
+                        <MyOrders></MyOrders>
+                    </Route>
+                    <Route path={`${path}/payment`}>
+                        <Payments></Payments>
+                    </Route>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/addDoctor`}>
+                    <AdminRoute path={`${path}/allOrders`}>
+                        <AllOrders></AllOrders>
+                    </AdminRoute>
+                    {/* <AdminRoute path={`${path}/addDoctor`}>
                         <AddDoctor></AddDoctor>
                     </AdminRoute> */}
                 </Switch>
