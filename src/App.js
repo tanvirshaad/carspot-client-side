@@ -7,6 +7,8 @@ import Register from './components/Register/Register';
 import Products from './components/Products/Products';
 import AllProducts from './components/AllProducts/AllProducts';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
     return (
@@ -25,8 +27,11 @@ function App() {
                     <Route path="/products">
                         <Products></Products>
                     </Route>
-                    <Route path="/placeOrder/:_id">
+                    <PrivateRoute path="/placeOrder/:_id">
                         <PlaceOrder></PlaceOrder>
+                    </PrivateRoute>
+                    <Route path="/dashboard">
+                        <Dashboard></Dashboard>
                     </Route>
                     <Route path="/login">
                         <Login></Login>

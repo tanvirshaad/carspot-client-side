@@ -33,6 +33,15 @@ const Navigation = () => {
                     </Typography>
                     {user?.email ? (
                         <Box>
+                            <Link
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'white',
+                                }}
+                                to="/dashboard"
+                            >
+                                Dashboad
+                            </Link>
                             <Button onClick={logout} color="inherit">
                                 Logout
                             </Button>
