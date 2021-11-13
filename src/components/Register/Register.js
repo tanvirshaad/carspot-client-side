@@ -8,7 +8,6 @@ import {
     TextField,
     Typography,
 } from '@mui/material';
-import login from '../../images/login.png';
 import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
@@ -38,9 +37,9 @@ const Register = () => {
         e.preventDefault();
     };
     return (
-        <Container>
+        <Container sx={{ mt: 5 }}>
             <Grid container spacing={2}>
-                <Grid sx={{ my: 'auto' }} item xs={12} md={6}>
+                <Grid sx={{ m: 'auto' }} item xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>
                         Register
                     </Typography>
@@ -106,9 +105,6 @@ const Register = () => {
                         </Alert>
                     )}
                     {authError && <Alert severity="error">{authError}</Alert>}
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src={login} alt="" />
                 </Grid>
             </Grid>
         </Container>

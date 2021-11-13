@@ -8,7 +8,6 @@ import {
     TextField,
     Typography,
 } from '@mui/material';
-import login from '../../images/login.png';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
@@ -32,9 +31,9 @@ const Login = () => {
     };
 
     return (
-        <Container>
+        <Container sx={{ mt: 5 }}>
             <Grid container spacing={2}>
-                <Grid sx={{ my: 'auto' }} item xs={12} md={6}>
+                <Grid sx={{ m: 'auto' }} item xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>
                         Login
                     </Typography>
@@ -79,9 +78,6 @@ const Login = () => {
                             <Alert severity="error">{authError}</Alert>
                         )}
                     </form>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src={login} alt="" />
                 </Grid>
             </Grid>
         </Container>

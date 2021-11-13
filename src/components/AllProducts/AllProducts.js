@@ -5,7 +5,7 @@ import Product from '../Product/Product';
 
 const AllProducts = () => {
     let [products, setProducts] = useState([]);
-    const { user, isLoading } = useAuth();
+    const { isLoading } = useAuth();
     useEffect(() => {
         fetch('http://localhost:5000/products')
             .then((res) => res.json())

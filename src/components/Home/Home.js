@@ -1,16 +1,18 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import DisplayReviews from '../DisplayReviews/DisplayReviews';
 import Features from '../Features/Features';
-import Navigation from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
 import Products from '../Products/Products';
 
 const Home = () => {
     return (
         <div>
-            <Navigation></Navigation>
             <Banner></Banner>
             <Products></Products>
             <Features></Features>
+            <DisplayReviews></DisplayReviews>
+            <Footer></Footer>
         </div>
     );
 };

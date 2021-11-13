@@ -17,6 +17,8 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import Payments from '../Payments/Payments';
 import AllOrders from '../AllOrders/AllOrders';
+import Review from '../Review/Review';
+import AddProduct from '../AddProduct/AddProduct';
 
 const drawerWidth = 230;
 
@@ -31,26 +33,44 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div style={{ marginLeft: 'auto' }}>
+        <div style={{ margin: '0 auto' }}>
             <Toolbar />
             <Divider />
-            <Link style={{ textDecoration: 'none' }} to="/allProducts">
-                <Button color="inherit">BUY MORE</Button>
-            </Link>
-            <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}>
-                <Button color="inherit">My Orders</Button>
-            </Link>
-            <Link style={{ textDecoration: 'none' }} to={`${url}/payment`}>
-                <Button color="inherit">Make Payment</Button>
-            </Link>
-            <br />
-            <Link style={{ textDecoration: 'none' }} to="/home">
-                <Button onClick={logout} variant="outlined">
-                    Logout
-                </Button>
-            </Link>
-            <br />
+            {!admin && (
+                <Box>
+                    <Link style={{ textDecoration: 'none' }} to="/allProducts">
+                        <Button color="inherit">BUY MORE</Button>
+                    </Link>
+                    <br />
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to={`${url}/myOrders`}
+                    >
+                        <Button color="inherit">My Orders</Button>
+                    </Link>
+                    <br />
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to={`${url}/payment`}
+                    >
+                        <Button color="inherit">Make Payment</Button>
+                    </Link>
+                    <br />
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to={`${url}/review`}
+                    >
+                        <Button color="inherit">Review</Button>
+                    </Link>
+                    <br />
+                    <Link style={{ textDecoration: 'none' }} to="/home">
+                        <Button onClick={logout} variant="outlined">
+                            Logout
+                        </Button>
+                    </Link>
+                    <br />
+                </Box>
+            )}
             {admin && (
                 <Box>
                     <Link
@@ -65,7 +85,20 @@ function Dashboard(props) {
                         style={{ textDecoration: 'none' }}
                         to={`${url}/allOrders`}
                     >
-                        <Button color="inherit">All Orders</Button>
+                        <Button color="inherit">Manage All Orders</Button>
+                    </Link>
+                    <br />
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to={`${url}/addProduct`}
+                    >
+                        <Button color="inherit">Add Product</Button>
+                    </Link>
+                    <br />
+                    <Link style={{ textDecoration: 'none' }} to="/home">
+                        <Button onClick={logout} variant="outlined">
+                            Logout
+                        </Button>
                     </Link>
                 </Box>
             )}
@@ -149,7 +182,9 @@ function Dashboard(props) {
                 <Toolbar />
                 <Switch>
                     <Route exact path={path}>
-                        <MyOrders></MyOrders>
+                        <h2 style={{ paddingBottom: '250px' }}>
+                            Welcome to Dashboard
+                        </h2>
                     </Route>
                     <Route path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
@@ -157,15 +192,18 @@ function Dashboard(props) {
                     <Route path={`${path}/payment`}>
                         <Payments></Payments>
                     </Route>
+                    <Route path={`${path}/review`}>
+                        <Review></Review>
+                    </Route>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
                     <AdminRoute path={`${path}/allOrders`}>
                         <AllOrders></AllOrders>
                     </AdminRoute>
-                    {/* <AdminRoute path={`${path}/addDoctor`}>
-                        <AddDoctor></AddDoctor>
-                    </AdminRoute> */}
+                    <AdminRoute path={`${path}/addProduct`}>
+                        <AddProduct></AddProduct>
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>

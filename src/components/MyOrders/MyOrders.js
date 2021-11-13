@@ -48,10 +48,10 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h3>Total Orders: {orders.length}</h3>
+            <h3>My Orders: {orders.length}</h3>
             <Grid container spacing={2}>
                 {orders.map((order) => (
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={4} key={order._id}>
                         <Card sx={{ maxWidth: 345 }}>
                             <CardActionArea>
                                 <CardMedia

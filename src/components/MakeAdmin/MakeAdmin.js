@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
+
     const handleAdminSubmit = (e) => {
         const user = { email };
         fetch('http://localhost:5000/users/admin', {
@@ -25,6 +26,7 @@ const MakeAdmin = () => {
     const handleOnBlur = (e) => {
         setEmail(e.target.value);
     };
+
     return (
         <Container sx={{ width: '50%' }}>
             <h2>Make An Admin</h2>

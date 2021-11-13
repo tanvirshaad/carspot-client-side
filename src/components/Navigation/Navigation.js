@@ -29,8 +29,18 @@ const Navigation = () => {
                         component="div"
                         sx={{ flexGrow: 1 }}
                     >
-                        News
+                        CarSpot
                     </Typography>
+                    <Link
+                        style={{
+                            textDecoration: 'none',
+                            color: 'white',
+                            marginRight: '10px',
+                        }}
+                        to="/home"
+                    >
+                        Home
+                    </Link>
                     {user?.email ? (
                         <Box>
                             <Link

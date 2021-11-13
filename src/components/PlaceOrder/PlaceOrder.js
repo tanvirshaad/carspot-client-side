@@ -18,7 +18,6 @@ const PlaceOrder = () => {
     const { _id } = useParams();
     const [product, setProducut] = useState({});
     const { user } = useAuth();
-    console.log(user);
     const {
         register,
         handleSubmit,
@@ -30,7 +29,7 @@ const PlaceOrder = () => {
         fetch(url)
             .then((res) => res.json())
             .then((data) => setProducut(data));
-    }, []);
+    }, [_id]);
     const onSubmit = (data) => {
         const { _id, name, price, img } = product;
         data.order = { _id, name, price, img };
