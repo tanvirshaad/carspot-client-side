@@ -7,7 +7,7 @@ const AllProducts = () => {
     let [products, setProducts] = useState([]);
     const { isLoading } = useAuth();
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://hidden-temple-83787.herokuapp.com/products')
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data);

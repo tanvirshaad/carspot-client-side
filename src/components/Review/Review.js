@@ -13,7 +13,7 @@ const Review = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://hidden-temple-83787.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

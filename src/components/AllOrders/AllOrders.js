@@ -19,13 +19,13 @@ const AllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders`;
+        const url = `https://hidden-temple-83787.herokuapp.com/orders`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setAllOrders(data));
     }, [user?.email]);
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://hidden-temple-83787.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE',
         })
