@@ -14,20 +14,17 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import useAuth from '../hooks/useAuth';
 
-const MyOrders = () => {
-    const { user, isLoading } = useAuth();
-    const [myOrders, setMyOrders] = useState([]);
-
+const ManageProducts = () => {
+    const { isLoading } = useAuth();
+    const [products, setProducts] = useState([]);
     useEffect(() => {
-        const url = `https://hidden-temple-83787.herokuapp.com/orders`;
+        const url = `https://hidden-temple-83787.herokuapp.com/products`;
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setMyOrders(data));
+            .then((data) => setProducts(data));
     }, []);
-    const orders = myOrders.filter((order) => order.email === user?.email);
-
     const handleDelete = (id) => {
-        const url = `https://hidden-temple-83787.herokuapp.com/orders/${id}`;
+        const url = `https://hidden-temple-83787.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE',
         })
@@ -35,11 +32,11 @@ const MyOrders = () => {
             .then((data) => {
                 let result = window.confirm('Are you sure to delete?');
                 if (result) {
-                    alert('Order deleted');
-                    const remaining = myOrders.filter(
+                    alert('Product deleted');
+                    const remaining = products.filter(
                         (order) => order._id !== id
                     );
-                    setMyOrders(remaining);
+                    setProducts(remaining);
                 }
             });
     };
@@ -48,16 +45,16 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h3>My Orders: {orders.length}</h3>
+            <h3>Total Products: {products.length}</h3>
             <Grid container spacing={2}>
-                {orders.map((order) => (
-                    <Grid item xs={12} md={4} key={order._id}>
+                {products.map((product) => (
+                    <Grid item xs={12} md={4} key={product._id}>
                         <Card sx={{ maxWidth: 345 }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
                                     height="140"
-                                    image={order.order.img}
+                                    image={product.img}
                                 />
                                 <CardContent>
                                     <Typography
@@ -65,23 +62,25 @@ const MyOrders = () => {
                                         variant="h5"
                                         component="div"
                                     >
-                                        {order.order.name}
+                                        {product.name}
                                     </Typography>
                                     <Typography
                                         variant="body2"
                                         color="text.secondary"
                                     >
-                                        $ {order.order.price}
+                                        $ {product.price}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
                                 <Link
                                     style={{ textDecoration: 'none' }}
-                                    to={`/orders/${order.order._id}`}
+                                    to={`/orders/${product._id}`}
                                 >
                                     <Button
-                                        onClick={() => handleDelete(order._id)}
+                                        onClick={() =>
+                                            handleDelete(product._id)
+                                        }
                                         variant="outlined"
                                         startIcon={<DeleteIcon />}
                                     >
@@ -97,4 +96,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageProducts;

@@ -18,6 +18,7 @@ const PlaceOrder = () => {
     const { _id } = useParams();
     const [product, setProducut] = useState({});
     const { user } = useAuth();
+
     const {
         register,
         handleSubmit,

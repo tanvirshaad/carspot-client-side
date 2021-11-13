@@ -19,6 +19,7 @@ import Payments from '../Payments/Payments';
 import AllOrders from '../AllOrders/AllOrders';
 import Review from '../Review/Review';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const drawerWidth = 230;
 
@@ -93,6 +94,13 @@ function Dashboard(props) {
                         to={`${url}/addProduct`}
                     >
                         <Button color="inherit">Add Product</Button>
+                    </Link>
+                    <br />
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to={`${url}/manageProducts`}
+                    >
+                        <Button color="inherit">Manage Products</Button>
                     </Link>
                     <br />
                     <Link style={{ textDecoration: 'none' }} to="/home">
@@ -203,6 +211,9 @@ function Dashboard(props) {
                     </AdminRoute>
                     <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
                     </AdminRoute>
                 </Switch>
             </Box>
