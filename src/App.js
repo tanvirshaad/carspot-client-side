@@ -10,6 +10,7 @@ import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Dashboard from './components/Dashboard/Dashboard';
 import Navigation from './components/Navigation/Navigation';
+import NotFound from './components/NotFound/NotFound';
 function App() {
     return (
         <AuthProvider>
@@ -39,6 +40,9 @@ function App() {
                     </Route>
                     <Route path="/register">
                         <Register></Register>
+                    </Route>
+                    <Route path="*">
+                        <NotFound></NotFound>
                     </Route>
                 </Switch>
             </BrowserRouter>
